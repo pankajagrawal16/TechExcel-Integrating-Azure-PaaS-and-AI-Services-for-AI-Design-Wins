@@ -63,9 +63,6 @@ jobs:
   
     runs-on: ubuntu-latest
     needs: dockerBuildPush
-    environment:
-      name: prod
-      url: https://{your_prefix}-api.azurewebsites.net/
     
     steps:
     - uses: actions/checkout@v4
@@ -77,5 +74,5 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: '{your_prefix}-api'
+        app-name: 'cayls6wovbpfi-api'
         images: cayls6wovbpficosureg.azurecr.io/techexcel/csapi:${{github.run_number}}
